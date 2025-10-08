@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 00:47:01 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/08 14:36:06 by lduran-f         ###   ########.fr       */
+/*   Created: 2025/10/08 12:39:27 by lduran-f          #+#    #+#             */
+/*   Updated: 2025/10/08 14:46:03 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// n = num bytes que se desean poner a cero
-void	ft_bzero(void *s, unsigned int n)
+void	*ft_calloc(size_t nelem, size_t elsize)
 {
-	unsigned int	i;
+	void	*ret;
 
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *) s)[i] = 0;
-		i++;
-	}
+	ret = malloc(nelem * elsize);
+	if (!ret)
+		return (0);
+	ft_bzero(ret, nelem * elsize);
+	return (ret);
 }

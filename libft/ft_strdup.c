@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 00:47:01 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/08 14:36:06 by lduran-f         ###   ########.fr       */
+/*   Created: 2025/10/08 12:39:51 by lduran-f          #+#    #+#             */
+/*   Updated: 2025/10/08 14:23:13 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// n = num bytes que se desean poner a cero
-void	ft_bzero(void *s, unsigned int n)
+char	*ft_strdup(const char *s)
 {
-	unsigned int	i;
+	char	*ret;
+	int		len;
 
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *) s)[i] = 0;
-		i++;
-	}
+	len = ft_strlen(s);
+	if (len <= 0)
+		return (0);
+	ret = malloc(len + 1);
+	ret = ft_strcpy(ret, s);
+	return (ret);
 }
