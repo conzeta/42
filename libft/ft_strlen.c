@@ -6,13 +6,15 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 04:31:54 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/09/21 04:33:34 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/09 23:54:00 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')

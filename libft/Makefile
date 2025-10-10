@@ -1,4 +1,4 @@
-SRC = ft_bzero.c ft_isalpha.c \
+SRC = ft_bzero.c  ft_isalpha.c  ft_strlen.c \
 
 OBJ = $(SRC:.c=.o)
 

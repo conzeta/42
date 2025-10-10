@@ -6,7 +6,7 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 14:06:02 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/08 14:43:34 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/10 00:04:15 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
 
 void	ft_bzero(void *s, unsigned int n);
 int		ft_isalpha(int c);
+size_t	ft_strlen(char *str);
 
 #endif
