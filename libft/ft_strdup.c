@@ -6,7 +6,7 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 12:39:51 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/08 14:23:13 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/10 20:38:29 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 char	*ft_strdup(const char *s)
 {
 	char	*ret;
-	int		len;
+	size_t	len;
 
 	len = ft_strlen(s);
-	if (len <= 0)
-		return (0);
 	ret = malloc(len + 1);
-	ret = ft_strcpy(ret, s);
+	if (!ret)
+		return (0);
+	ft_strlcpy(ret, s, len + 1);
 	return (ret);
 }

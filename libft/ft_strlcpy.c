@@ -6,13 +6,15 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 04:35:52 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/09/21 04:36:28 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/10 20:25:31 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned int	l;
+	size_t	l;
 
 	l = 0;
 	if (size > 0)
@@ -22,25 +24,20 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 			dest[l] = src[l];
 			l++;
 		}
+		dest[l] = '\0';
 	}
-	dest[l] = '\0';
-	l = 0;
-	while (src[l] != '\0')
-	{
-		l++;
-	}
-	return (l);
+	return (ft_strlen(src));
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int	main(void)
 {
 	char	mystring[] = "42 sheep in a room"; //18+1 caracteres.
 	char	copy[19];
-	unsigned int	orisz;
+	size_t	orisz;
 	
 	orisz = ft_strlcpy(copy, mystring, 0);
 	printf("orisz: %d\n", orisz);
 	printf("copy: '%s'\n", copy);
 	return (0);
-}
+} */
