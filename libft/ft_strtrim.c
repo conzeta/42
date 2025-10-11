@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/25 20:00:04 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/11 12:22:10 by lduran-f         ###   ########.fr       */
+/*   Created: 2025/10/11 11:38:40 by lduran-f          #+#    #+#             */
+/*   Updated: 2025/10/11 13:16:46 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+#include "libft.h"
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	while (*s != 0)
+	char	*ret;
+	char	*start;
+	size_t	i;
+	size_t	setlen;
+
+	start = (char *) s1;
+	setlen = ft_strlen(set);
+	i = 0;
+	while (i < setlen)
 	{
-		if (*s == (unsigned char) c)
-			return ((char *) s);
-		s++;
+		while (*start == set[i])
+		{
+			start++;
+			i = -1; //no válido supongo
+		}
+		i++;
 	}
-	if (*s == (unsigned char) c)
-		return ((char *) s);
-	return (0);
+
+	return (ret);
 }
