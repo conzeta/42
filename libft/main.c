@@ -6,7 +6,7 @@ int	main(void)
 	int		num;
 	char	*sn;
 
-	num = 0;
+	num = -543000;
 	sn = ft_itoa(num);
 	printf("%s\n", sn);
 	free(sn);
