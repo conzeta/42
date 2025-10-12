@@ -3,10 +3,10 @@
 
 int	main(void)
 {
-	int	i = 'A';
-    while (i <= 'Z')
-    {
-        printf("%d", ft_isalpha(i));
-        i++;
-    }
+	char const	mystring[] = "+-*-hola*persona+--*+";
+	char const	set[] = "-*+";
+	char		*ret;
+
+	ret = ft_strtrim(mystring, set);
+	printf("%s", ret);
 }
