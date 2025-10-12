@@ -28,6 +28,6 @@ fclean: clean
 re: fclean all
 
 test: all
-	$(CC) $(CFLAGS) main.c -L. -lft -o test && ./test
+	$(CC) $(CFLAGS) main.c -L. -lft -o test && ./test && rm -f test
 
 .PHONY: all clean fclean re bonus test
