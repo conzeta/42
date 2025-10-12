@@ -3,10 +3,11 @@
 
 int	main(void)
 {
-	char const	mystring[] = "+-*-hola*persona+--*+";
-	char const	set[] = "-*+";
-	char		*ret;
+	int		num;
+	char	*sn;
 
-	ret = ft_strtrim(mystring, set);
-	printf("%s", ret);
+	num = 0;
+	sn = ft_itoa(num);
+	printf("%s\n", sn);
+	free(sn);
 }
