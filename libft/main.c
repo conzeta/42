@@ -3,8 +3,9 @@
 
 static void	print_split(char **res)
 {
-	int	i = 0;
+	int	i;
 
+	i = 0;
 	if (!res)
 	{
 		printf("(null)\n");
@@ -23,7 +24,7 @@ static void	free_split(char **split)
 	int	i;
 
 	if (!split)
-		return;
+		return ;
 	i = 0;
 	while (split[i])
 	{
@@ -35,35 +36,9 @@ static void	free_split(char **split)
 
 int	main(void)
 {
-	char **result;
+	char	**result;
 
-	printf("=== Caso 1 ===\n");
-	result = ft_split("hola mundo 42", ' ');
-	print_split(result);
-	free_split(result);
-
-	printf("\n=== Caso 2 ===\n");
-	result = ft_split("   hola   mundo   42   ", ' ');
-	print_split(result);
-	free_split(result);
-
-	printf("\n=== Caso 3 ===\n");
-	result = ft_split("hola", ' ');
-	print_split(result);
-	free_split(result);
-
-	printf("\n=== Caso 4 ===\n");
-	result = ft_split("", ' ');
-	print_split(result);
-	free_split(result);
-
-	printf("\n=== Caso 5 ===\n");
-	result = ft_split("----", '-');
-	print_split(result);
-	free_split(result);
-
-	printf("\n=== Caso 6 ===\n");
-	result = ft_split(NULL, ' ');
+	result = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i');
 	print_split(result);
 	free_split(result);
 }

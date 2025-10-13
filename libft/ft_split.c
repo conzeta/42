@@ -6,7 +6,7 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 23:00:09 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/13 11:27:15 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/13 12:21:55 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,39 @@ static size_t	wordcount(char const *t, char c)
 	return (wc);
 }
 
-static const char	*getword(const char *t, char c, char **split, size_t wi)
+static const char	*getword(const char *t, char c, char **split,
+	unsigned int wi)
 {
-	size_t	wordlen;
+	size_t			wordlen;
+	unsigned int	i;
 
 	wordlen = 0;
 	while (t[wordlen] != 0 && t[wordlen] != c)
 		wordlen++;
 	split[wi] = ft_substr(t, 0, wordlen);
-	return (t + wordlen);
+	if (split[wi])
+		return (t + wordlen);
+	else
+	{
+		i = 0;
+		while (i < wi)
+		{
+			free(split[i]);
+			i++;
+		}
+		free(split);
+		return (0);
+	}
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**split;
-	size_t	wc;
-	size_t	wi;
+	char			**split;
+	unsigned int	wi;
 
 	if (!s)
-		return (0); //comportamiento esperado?
-	wc = wordcount(s, c);
-	split = (char **)malloc(sizeof(char *) * (1 + wc));
+		return (0);
+	split = (char **)malloc(sizeof(char *) * (1 + wordcount(s, c)));
 	if (!split)
 		return (0);
 	wi = 0;
@@ -58,6 +70,8 @@ char	**ft_split(char const *s, char c)
 		if (*s != c)
 		{
 			s = getword(s, c, split, wi);
+			if (!s)
+				return (0);
 			wi++;
 		}
 		else
@@ -69,8 +83,9 @@ char	**ft_split(char const *s, char c)
 
 /* static void	print_split(char **res)
 {
-	int	i = 0;
+	int	i;
 
+	i = 0;
 	if (!res)
 	{
 		printf("(null)\n");
@@ -89,7 +104,7 @@ static void	free_split(char **split)
 	int	i;
 
 	if (!split)
-		return;
+		return ;
 	i = 0;
 	while (split[i])
 	{
@@ -97,42 +112,13 @@ static void	free_split(char **split)
 		i++;
 	}
 	free(split);
-} */
-
-/* #include <stdio.h>
+}
 
 int	main(void)
 {
-	char **result;
+	char	**result;
 
-	printf("=== Caso 1 ===\n");
-	result = ft_split("hola mundo 42", ' ');
+	result = ft_split("lorem ipsum", 'i');
 	print_split(result);
 	free_split(result);
-
-	printf("\n=== Caso 2 ===\n");
-	result = ft_split("   hola   mundo   42   ", ' ');
-	print_split(result);
-	free_split(result);
-
-	printf("\n=== Caso 3 ===\n");
-	result = ft_split("hola", ' ');
-	print_split(result);
-	free_split(result);
-
-	printf("\n=== Caso 4 ===\n");
-	result = ft_split("", ' ');
-	print_split(result);
-	free_split(result);
-
-	printf("\n=== Caso 5 ===\n");
-	result = ft_split("----", '-');
-	print_split(result);
-	free_split(result);
-
-	printf("\n=== Caso 6 ===\n");
-	result = ft_split(NULL, ' ');
-	print_split(result);
-	free_split(result);
-}
- */
+} */
