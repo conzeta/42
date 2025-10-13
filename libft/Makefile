@@ -1,6 +1,7 @@
 SRC = ft_bzero.c    ft_isalpha.c    ft_strlen.c    ft_memcpy.c    ft_strjoin.c   \
       ft_strlcpy.c  ft_strdup.c     ft_substr.c    ft_strchr.c    ft_strrchr.c   \
-	  ft_strtrim.c	ft_itoa.c		ft_split.c  \
+	  ft_strtrim.c	ft_itoa.c		ft_split.c	   ft_toupper.c	  ft_strmapi.c   \
+	  ft_striteri.c \
 
 OBJ = $(SRC:.c=.o)
 
