@@ -6,17 +6,21 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 04:44:14 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/09/29 15:47:29 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/14 18:54:52 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(char *str, const char *to_find, unsigned int n)
+#include "libft.h"
+
+char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
-	unsigned int	i;
-	unsigned int	i2;
+	size_t	i;
+	size_t	i2;
 
 	i = 0;
 	i2 = 0;
+	if (!to_find)
+		return (0);
 	while (str[i] != 0 && i < n)
 	{
 		while (str[i] == to_find[i2] && i < n)

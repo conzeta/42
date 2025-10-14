@@ -6,11 +6,11 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 04:46:34 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/09/29 16:11:37 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/14 18:56:14 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;

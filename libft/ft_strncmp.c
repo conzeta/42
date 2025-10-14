@@ -6,13 +6,15 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 04:42:42 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/09/21 04:42:49 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/14 18:43:15 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while ((s1[i] != 0 || s2[i] != 0) && i < n)
@@ -26,7 +28,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	return (0);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int main() {
   char str1[] = "abcd", str2[] = "AbCd", str3[] = "abcd", str4[] = "abcd ";
@@ -58,3 +60,4 @@ int main() {
 
   return 0;
 }
+ */

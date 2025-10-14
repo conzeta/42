@@ -6,16 +6,15 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 00:47:01 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/08 14:36:06 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/14 18:25:00 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// n = num bytes que se desean poner a cero
-void	ft_bzero(void *s, unsigned int n)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)
@@ -24,3 +23,4 @@ void	ft_bzero(void *s, unsigned int n)
 		i++;
 	}
 }
+// n = num bytes que se desean poner a cero

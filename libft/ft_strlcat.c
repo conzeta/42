@@ -6,20 +6,20 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 04:39:45 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/09/21 04:40:53 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/14 18:35:56 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	n;
-	unsigned int	ld;
+	size_t	i;
+	size_t	n;
+	size_t	ld;
 
 	ld = ft_strlen(dest);
-	n = ft_strlen(dest);
+	n = ld;
 	i = 0;
 	if (size >= ld +1)
 	{
