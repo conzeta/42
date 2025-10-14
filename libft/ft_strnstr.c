@@ -6,7 +6,7 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 04:44:14 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/14 18:54:52 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/14 19:09:12 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 		{
 			if (to_find[i2 + 1] == '\0')
 			{
-				return (str + i - i2);
+				return ((char *) str + i - i2);
 			}
 			i++;
 			i2++;

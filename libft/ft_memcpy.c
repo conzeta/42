@@ -6,7 +6,7 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 23:57:20 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/14 18:26:22 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/14 19:15:01 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
-	if (!dest || !src)
+	if (!dest && !src)
 		return (0);
 	i = 0;
 	while (i < n)
@@ -26,3 +26,5 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+/* 	if (!dest || !src)
+		return (0); */

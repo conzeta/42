@@ -6,7 +6,7 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 08:42:44 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/14 08:49:46 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/14 19:05:28 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_putnbr_fd(int n, int fd)
 		}
 		if (n / 10 != 0)
 		{
-			ft_putnbr(n / 10);
+			ft_putnbr_fd(n / 10, fd);
 		}
 		toprint = (n % 10) + '0';
 		write(fd, &toprint, 1);
