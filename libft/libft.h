@@ -6,7 +6,7 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 14:06:02 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/13 13:31:55 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/14 08:54:28 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 void	ft_bzero(void *s, unsigned int n);
 int		ft_isalpha(int c);
@@ -32,5 +33,9 @@ char	**ft_split(char const *s, char c);
 int		ft_toupper(int c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putendl_fd(char *s, int fd);
 
 #endif
