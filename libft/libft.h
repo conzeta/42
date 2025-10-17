@@ -6,7 +6,7 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 14:06:02 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/15 13:46:37 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/17 17:51:56 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t nelem, size_t elsize);
 
-typedef struct 		s_list
+typedef struct s_list
 {
-	void 			*content;
-	struct s_list 	*next;
-} 					t_list;
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 #endif

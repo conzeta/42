@@ -6,7 +6,7 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 04:44:14 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/14 19:09:12 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/17 19:32:20 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 
 	i = 0;
 	i2 = 0;
-	if (!to_find)
-		return (0);
+	if (ft_strlen(to_find) == 0)
+		return ((char *)str);
 	while (str[i] != 0 && i < n)
 	{
 		while (str[i] == to_find[i2] && i < n)
@@ -42,8 +42,8 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
  
 int	main(void)
 {
-   char *string12 = "buenos tenores";
-   char *string22 = "nor";
+   const char *string12 = "buenos tenores";
+   const char *string22 = "nor";
    char *result;
 
    result = ft_strnstr(string12, string22, 10);

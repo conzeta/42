@@ -6,7 +6,7 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 08:42:44 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/14 19:05:28 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/17 18:06:36 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else if (n == -maxvalint - 1)
 	{
-		write(fd, "-2147483648", 12);
+		write(fd, "-2147483648", 11);
 	}
 }

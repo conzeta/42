@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 11:32:07 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/17 18:02:53 by lduran-f         ###   ########.fr       */
+/*   Created: 2025/10/17 16:40:22 by lduran-f          #+#    #+#             */
+/*   Updated: 2025/10/17 17:51:06 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
+	t_list	*ret;
+	t_list	*new;
 
-	i = 0;
-	while (i < n)
+	if (!f || !lst)
+		return (0);
+	ret = ft_lstnew(f(lst->content));
+	if (!ret)
+		return (0);
+	while ((lst->next) != NULL)
 	{
-		if (((unsigned char *) s1)[i] != ((unsigned char *) s2)[i])
+		lst = lst->next;
+		new = ft_lstnew(f(lst->content));
+		if (!new)
 		{
-			return (((unsigned char *) s1)[i] - ((unsigned char *) s2)[i]);
+			ft_lstclear(&ret, del);
+			return (0);
 		}
-		i++;
+		ft_lstadd_back(&ret, new);
 	}
-	return (0);
+	return (ret);
 }
-
-/* #include <string.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	char	e1[] = "hola caracola";
-	char	e2[] = "hola caracol";
-
-	printf("%d\n", memcmp(e1, e2, 16));
-	printf("%d\n", ft_memcmp(e1, e2, 16));
-} */
