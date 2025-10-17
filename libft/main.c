@@ -3,5 +3,11 @@
 
 int	main(void)
 {
-	ft_putstr_fd("Hola mundo\n", 1);
+	t_list	*pbox;
+	char	s[] = "This is the content.";
+
+	pbox = ft_lstnew(s);
+	printf("%s\n", pbox->content);
+	printf("%p\n", pbox->next);
+	free(pbox);
 }

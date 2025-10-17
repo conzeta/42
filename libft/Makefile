@@ -20,7 +20,7 @@ $(NAME): $(OBJ) $(INCLUDE)
 	ar -rcs $(NAME) $(OBJ)
 
 %.o: %.c
-	cc $(CFLAGS) -c $< -o $@
+	cc $(CFLAGS) -c $< -o $@ -fsanitize=address
 
 
 clean:
@@ -33,5 +33,7 @@ re: fclean all
 
 test: all
 	$(CC) $(CFLAGS) main.c -L. -lft -o test && ./test && rm -f test
+
+bonus:
 
 .PHONY: all clean fclean re bonus test

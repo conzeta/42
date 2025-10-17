@@ -6,7 +6,7 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 04:46:34 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/14 18:56:14 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/15 13:27:14 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	i = 0;
 	result = 0;
-	while (str[i] == ' ' || str[i] == '+' || (str[i] > 8 && str[i] < 14))
+	while (str[i] == ' ' || (str[i] > 8 && str[i] < 14))
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		sign *= -1;
+		if (str[i] == '-')
+			sign *= -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
@@ -38,7 +39,7 @@ int	ft_atoi(const char *str)
 #include <stdio.h>
 int	main(void)
 {
-	char example[] = "\n  \tjhrf0aMl42_";
+	char example[] = "0000042";
 	int result = atoi(example);
 	printf("%d\n", result);
 
