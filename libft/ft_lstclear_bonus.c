@@ -6,7 +6,7 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 23:54:27 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/17 17:50:52 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/21 20:30:30 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		while ((*lst) != NULL)
 		{
 			tmp = *lst;
-			lst = &((*lst)->next);
+			*lst = (*lst)->next;
 			ft_lstdelone(tmp, del);
 		}
+		*lst = NULL;
 	}
 }
