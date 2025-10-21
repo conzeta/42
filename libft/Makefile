@@ -6,12 +6,11 @@
 #    By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 19:15:10 by lduran-f          #+#    #+#              #
-#    Updated: 2025/10/21 19:15:14 by lduran-f         ###   ########.fr        #
+#    Updated: 2025/10/21 20:45:06 by lduran-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-INCLUDE = libft.h
 
 SRC = ft_bzero.c    ft_isalpha.c    ft_strlen.c    ft_memcpy.c    ft_strjoin.c    \
       ft_strlcpy.c  ft_strdup.c     ft_substr.c    ft_strchr.c    ft_strrchr.c    \
@@ -29,27 +28,21 @@ BONUS = ft_lstadd_back_bonus.c   ft_lstclear_bonus.c   ft_lstiter_bonus.c       
 
 BONUS_OBJ = $(BONUS:.c=.o)
 
-BONUS_CACHE = bonus.cache
-
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(INCLUDE)
+$(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
+
+bonus: $(OBJ) $(BONUS_OBJ)
+	ar -rcs $(NAME) $(OBJ) $(BONUS_OBJ)
 
 %.o: %.c
 	cc $(CFLAGS) -c $< -o $@
 
-$(BONUS_CACHE): $(BONUS_OBJ) $(OBJ) $(INCLUDE)
-	touch $(BONUS_CACHE)
-	ar -rcs $(NAME) $(OBJ) $(BONUS_OBJ)
-
-bonus : $(BONUS_CACHE)
-
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ)
-	rm -f $(BONUS_CACHE)
 
 fclean: clean
 	rm -f $(NAME)
