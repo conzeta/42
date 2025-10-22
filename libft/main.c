@@ -3,11 +3,10 @@
 
 int	main(void)
 {
-	t_list	*pbox;
-	char	s[] = "This is the content.";
+   const char *string12 = "a_a_a_a_z";
+   const char *string22 = "a_z";
+   char *result;
 
-	pbox = ft_lstnew(s);
-	printf("%s\n", pbox->content);
-	printf("%p\n", pbox->next);
-	free(pbox);
+   result = ft_strnstr(string12, string22, 10);
+   printf("mío: %s\n", result);
 }

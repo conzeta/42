@@ -6,7 +6,7 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 12:48:40 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/21 19:49:06 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/22 12:31:17 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!new || !lst)
 		return ;
-	new->next = NULL;
 	if (!(*lst))
 	{
 		*lst = new;
