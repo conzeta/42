@@ -6,7 +6,7 @@
 #    By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 19:15:10 by lduran-f          #+#    #+#              #
-#    Updated: 2025/10/21 20:45:06 by lduran-f         ###   ########.fr        #
+#    Updated: 2025/10/22 13:33:42 by lduran-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,22 +35,26 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(BONUS_OBJ)
+bonus: .bonus
+
+.bonus: $(OBJ) $(BONUS_OBJ)
 	ar -rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+	touch .bonus
 
 %.o: %.c
 	cc $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ)
-
+	rm -f .bonus
+	
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-test: all
-	$(CC) $(CFLAGS) main.c -L. -lft -o test && ./test && rm -f test
+#test: all
+#	$(CC) $(CFLAGS) main.c -L. -lft -o test && ./test && rm -f test
 
 
-.PHONY: all clean fclean re bonus test
+.PHONY: all clean fclean re bonus #test
