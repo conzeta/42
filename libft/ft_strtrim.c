@@ -6,7 +6,7 @@
 /*   By: lduran-f <lduran-f@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:38:40 by lduran-f          #+#    #+#             */
-/*   Updated: 2025/10/12 12:35:34 by lduran-f         ###   ########.fr       */
+/*   Updated: 2025/10/22 13:13:14 by lduran-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	start;
 	size_t	end;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = 0;
+	if (ft_strlen(s1) == 0)
+		return (ft_strdup(""));
 	end = ft_strlen(s1) - 1;
 	while (s1[start] && ft_strchr(set, s1[start]) != 0)
 		start++;
